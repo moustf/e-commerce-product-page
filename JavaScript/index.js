@@ -22,3 +22,15 @@ function hideNav() {
 
 // ? Adding the click event listener to the burger menu to hide the nav and the wrapper.
 closeIconImg.addEventListener("click", hideNav);
+
+// ? Targeting the cart icon img and cart box.
+const cartIconImg = document.querySelector(".cart-img-mob");
+const cartBox = document.querySelector(".cart-box-mob");
+
+// ? Creating the function which is responsible for toggling the hidden class.
+function showCartBox() {
+  cartBox.classList.toggle("hidden");
+}
+
+// ? Adding the click event listener to the cartIconImg variable.
+cartIconImg.addEventListener("click", showCartBox);
