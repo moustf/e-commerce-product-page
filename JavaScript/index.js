@@ -11,3 +11,14 @@ function showNav() {
 
 // ? Adding the click event listener to the burger menu.
 burgerMenuImg.addEventListener("click", showNav);
+
+// ? Targeting the close icon image.
+const closeIconImg = document.querySelector(".close-img-mob");
+
+// ? Creating the function which is responsible for hiding the nav and the wrapper.
+function hideNav() {
+  navAndWrapper.style.display = "none";
+}
+
+// ? Adding the click event listener to the burger menu to hide the nav and the wrapper.
+closeIconImg.addEventListener("click", hideNav);
