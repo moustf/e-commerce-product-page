@@ -70,11 +70,10 @@ body {
           }
         }
         .cart-box-mob {
-          display: none;
           position: absolute;
           left: 9px;
           top: 55px;
-          width: 23rem;
+          width: 23.3rem;
           height: 14rem;
           background-color: white;
           border-radius: 0.5rem;
@@ -157,6 +156,9 @@ body {
                 }
               }
             }
+          }
+          &.hidden {
+            display: none;
           }
         }
       }
