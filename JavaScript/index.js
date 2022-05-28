@@ -34,3 +34,11 @@ function showCartBox() {
 
 // ? Adding the click event listener to the cartIconImg variable.
 cartIconImg.addEventListener("click", showCartBox);
+
+// ? Style the body and the containers with low z index to make the arrows on top of the elements.
+document.body.style.position = "relative";
+document.body.style.zIndex = "-1";
+document.querySelector(".container").style.position = "relative";
+document.querySelector(".container").style.zIndex = "-1";
+document.querySelector(".mobile-cont").style.position = "relative";
+document.querySelector(".mobile-cont").style.zIndex = "-1";
