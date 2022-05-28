@@ -42,3 +42,13 @@ document.querySelector(".container").style.position = "relative";
 document.querySelector(".container").style.zIndex = "-1";
 document.querySelector(".mobile-cont").style.position = "relative";
 document.querySelector(".mobile-cont").style.zIndex = "-1";
+
+// ? Targeting the images in images carousel section.
+const carouselImages = [...document.querySelectorAll(".carousel .image")];
+
+// ? Targeting the arrows of the images carousel.
+const previousArrow = document.querySelector(".carousel .arrow-left");
+const nextArrow = document.querySelector(".carousel .arrow-right");
+
+// ? Create the index which we will move the images upon it.
+let index = 0;
