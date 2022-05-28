@@ -52,3 +52,16 @@ const nextArrow = document.querySelector(".carousel .arrow-right");
 
 // ? Create the index which we will move the images upon it.
 let index = 0;
+
+// ? Create the function which is responsible for moving the images forward.
+function nextImage() {
+  if (index < 4) {
+    carouselImages.forEach((img) => (img.style.zIndex = "0"));
+    carouselImages[index].style.zIndex = "5";
+    index++;
+  }
+}
+
+// ? Adding the event listener to apply the nextImage function on click.
+nextArrow.addEventListener("click", nextImage);
+
