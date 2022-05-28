@@ -80,3 +80,8 @@ function previousImage() {
 
 // ? Adding the event listener to apply previousImage function.
 previousArrow.addEventListener("click", previousImage);
+
+// ? Targeting the plus and minus images and the number p in which the quantity will be held.
+const plusImage = document.querySelector(".plus-img");
+const minusImage = document.querySelector(".minus-img");
+const quantityNum = document.querySelector(".number");
