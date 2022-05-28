@@ -103,3 +103,22 @@ function decreaseQuantity() {
 
 // ? Adding the event listener to the minus icon.
 minusImage.addEventListener("click", decreaseQuantity);
+
+// ? Targeting the elements needed for add to cart functionality.
+const addToCartBtn = document.querySelector(".add-to-cart-btn");
+const cartEmptyText = document.querySelector(".cart-empty-text");
+const cartProducts = document.querySelector(".cart-products");
+
+// ? Added the boolean value to save on local storage.
+let isAddedToCart = false;
+
+// ? Added the function that is responsible for adding to cart.
+function addToCart() {
+  cartEmptyText.style.display = "none";
+  cartProducts.style.display = "flex";
+  isAddedToCart = true;
+  addCartToLS(isAddedToCart);
+}
+
+// ? Added the event listener to the addToCartBtn element.
+addToCartBtn.addEventListener("click", addToCart);
