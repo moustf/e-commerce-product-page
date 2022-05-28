@@ -84,4 +84,13 @@ previousArrow.addEventListener("click", previousImage);
 // ? Targeting the plus and minus images and the number p in which the quantity will be held.
 const plusImage = document.querySelector(".plus-img");
 const minusImage = document.querySelector(".minus-img");
-const quantityNum = document.querySelector(".number");
+const quantityNum = document.querySelector(".quantity .number");
+
+// ? Creating the function which is responsible for increasing the quantity.
+function increaseQuantity() {
+  let numberOfItems = Number(quantityNum.textContent);
+  quantityNum.textContent = ++numberOfItems;
+}
+
+// ? Adding the event listener to the plus icon.
+plusImage.addEventListener("click", increaseQuantity);
