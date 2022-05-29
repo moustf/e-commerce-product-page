@@ -123,7 +123,6 @@ function addToCart() {
 // ? Added the event listener to the addToCartBtn element.
 addToCartBtn.addEventListener("click", addToCart);
 
-
 // ? Creating the function which is responsible for adding the isAddedToCart var to local storage.
 function addCartToLS(isAdded) {
   localStorage.setItem("isCartAdded", isAdded);
@@ -133,3 +132,8 @@ function addCartToLS(isAdded) {
 if (localStorage.getItem("isCartAdded")) {
   addToCart();
 }
+
+// ? Targeting the cart price elements.
+const singlePrice = document.querySelector(".inner-text .price .single");
+const numberOfProducts = document.querySelector(".inner-text .price .number");
+const totalPrice = document.querySelector(".inner-text .price .total");
