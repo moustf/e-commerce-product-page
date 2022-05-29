@@ -129,7 +129,7 @@ function addCartToLS(isAdded) {
 }
 
 // ? Testing if local storage has items, then render them onto the page.
-if (localStorage.getItem("isCartAdded")) {
+if (localStorage.getItem("isCartAdded") === "true") {
   addToCart();
 }
 
@@ -172,3 +172,6 @@ function getPriceFromLS() {
   }
 }
 getPriceFromLS();
+
+// ? Targeting the delete image in the cart.
+const deleteImg = document.querySelector(".text-info .delete-img");
