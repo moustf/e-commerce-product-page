@@ -157,3 +157,18 @@ function updateCartPriceInfo() {
 
 // ? Adding the event listener to the addToCart button to apply the updateCartPriceInfo function.
 addToCartBtn.addEventListener("click", updateCartPriceInfo);
+
+// ? Creating the function which is responsible for adding the price to local storage.
+function addPriceToLS(obj) {
+  localStorage.setItem("price", JSON.stringify(obj));
+}
+
+// ? Get price data form local storage.
+function getPriceFromLS() {
+  if (localStorage.getItem("price")) {
+    let data = JSON.parse(localStorage.getItem("price"));
+    numberOfProducts.textContent = data.num;
+    totalPrice.textContent = `$${(data.num * 125).toFixed(2)}`;
+  }
+}
+getPriceFromLS();
