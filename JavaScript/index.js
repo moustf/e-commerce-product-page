@@ -129,7 +129,7 @@ function addCartToLS(isAdded) {
 }
 
 // ? Testing if local storage has items, then render them onto the page.
-if (localStorage.getItem("isCartAdded")) {
+if (localStorage.getItem("isCartAdded") === "true") {
   addToCart();
 }
 
@@ -172,3 +172,23 @@ function getPriceFromLS() {
   }
 }
 getPriceFromLS();
+
+// ? Targeting the delete image in the cart.
+const deleteImg = document.querySelector(".text-info .delete-img");
+
+// ? Creating the function which is responsible for deleting form cart.
+function removeCartProducts() {
+  cartEmptyText.style.display = "block";
+  cartProducts.style.display = "none";
+  isAddedToCart = false;
+  addCartToLS(isAddedToCart);
+}
+
+// ? Adding the event listener to the delete image.
+deleteImg.addEventListener("click", removeCartProducts);
+
+// ? If the isCartAdded item in local storage is false, hide the product info from ls
+if (localStorage.getItem("isCartAdded") === "false") {
+  cartEmptyText.style.display = "block";
+  cartProducts.style.display = "none";
+}
