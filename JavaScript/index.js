@@ -137,3 +137,18 @@ if (localStorage.getItem("isCartAdded")) {
 const singlePrice = document.querySelector(".inner-text .price .single");
 const numberOfProducts = document.querySelector(".inner-text .price .number");
 const totalPrice = document.querySelector(".inner-text .price .total");
+
+// ? creating the function which is responsible for calculating the total price.
+function getTotalPrice() {
+  let quantity = +quantityNum.textContent;
+  return `$${(quantity * 125).toFixed(2)}`;
+}
+
+// ? Creating the function which is responsible for updating the price info in the cart box.
+function updateCartPriceInfo() {
+  numberOfProducts.textContent = quantityNum.textContent;
+  totalPrice.textContent = getTotalPrice();
+}
+
+// ? Adding the event listener to the addToCart button to apply the updateCartPriceInfo function.
+addToCartBtn.addEventListener("click", updateCartPriceInfo);
