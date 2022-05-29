@@ -148,6 +148,11 @@ function getTotalPrice() {
 function updateCartPriceInfo() {
   numberOfProducts.textContent = quantityNum.textContent;
   totalPrice.textContent = getTotalPrice();
+  const priceObj = {
+    num: +quantityNum.textContent,
+    total: +quantityNum.textContent * 125,
+  };
+  addPriceToLS(priceObj);
 }
 
 // ? Adding the event listener to the addToCart button to apply the updateCartPriceInfo function.
