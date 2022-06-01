@@ -18,6 +18,17 @@ body {
   height: 100vh;
 }
 
+
+// ? Mixins: 
+@mixin sectionAfter($width, $left) {
+  content: "";
+  position: absolute;
+  width: #{$width};
+  height: 0.3rem;
+  background-color: #{$orange};
+  left: #{$left};
+  top: 64px;
+}
 /* Start the mobile screens styles. */
 
 .container {
@@ -340,3 +351,196 @@ body {
   }
 }
 /* End the mobile screens styles. */
+
+/* Start the styles for the desktop screens */
+
+@media only screen and (min-width: 787px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+    padding: 1rem 7rem;
+    .mobile-cont {
+      display: none;
+    }
+    .desktop-cont {
+      width: 100%;
+      height: 100%;
+      .head {
+        width: 100%;
+        height: 12vh;
+        padding: #{$padding};
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #{$grayish-blue};
+        margin-bottom: 2rem;
+        .logo {
+          width: 12rem;
+          height: 2rem;
+          cursor: pointer;
+        }
+        .sections {
+          width: 75rem;
+          .sec {
+            text-decoration: none;
+            color: #{$dark-grayish-blue};
+            font-size: larger;
+            margin-right: 3rem;
+            position: relative;
+          }
+          .sec:first-of-type {
+            &:hover {
+              &::after {
+                @include sectionAfter(8rem, -15px);
+              }
+            }
+          }
+          .sec:nth-of-type(2) {
+            &:hover {
+              &::after {
+                @include sectionAfter(4rem, -10px);
+              }
+            }
+          }
+          .sec:nth-of-type(3) {
+            &:hover {
+              &::after {
+                @include sectionAfter(6rem, -12px);
+              }
+            }
+          }
+          .sec:nth-of-type(4) {
+            &:hover {
+              &::after {
+                @include sectionAfter(5rem, -12px);
+              }
+            }
+          }
+          .sec:last-of-type {
+            &:hover {
+              &::after {
+                @include sectionAfter(6rem, -10px);
+              }
+            }
+          }
+        }
+        .cart-icon {
+          width: 32px;
+          height: 32px;
+          cursor: pointer;
+        }
+        .user-image {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          cursor: pointer;
+          &:hover {
+            border: 2px solid #{$orange};
+          }
+        }
+        .cart-box-desktop {
+          position: absolute;
+          left: 9px;
+          top: 55px;
+          width: 23.3rem;
+          height: 14rem;
+          background-color: white;
+          border-radius: 0.5rem;
+          padding: #{$padding};
+          .cart-head {
+            width: 100%;
+            height: 15%;
+            font-size: larger;
+            border-bottom: 1px solid #{$grayish-blue};
+          }
+          .cart-box-info {
+            width: 100%;
+            height: 80%;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            grid-template-rows: 1fr 1fr;
+            place-items: center;
+            .cart-empty-text {
+              grid-area: 1/ 1 / 3 / 4;
+              font-weight: 700;
+              color: #{$dark-grayish-blue};
+              text-align: center;
+              line-height: 180px;
+            }
+            .cart-products {
+              width: 100%;
+              height: 50%;
+              grid-area: 1 / 1 / 2 / 4;
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              display: none;
+              .product-thumbnail {
+                width: 4rem;
+                height: 3rem;
+                border-radius: 0.5rem;
+              }
+              .text-info {
+                width: calc(100% - 4rem);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 0.8rem;
+                .inner-text {
+                  color: #{$dark-grayish-blue};
+                  .details {
+                    font-size: medium;
+                  }
+                  .price {
+                    font-size: medium;
+                    span {
+                      padding-left: 0.5rem;
+                    }
+                    .total {
+                      font-weight: 700;
+                      color: #{$very-dark-blue};
+                    }
+                  }
+                }
+                .delete-img {
+                  width: #{$icons-dim};
+                  height: #{$icons-dim};
+                  cursor: pointer;
+                }
+              }
+              .checkout-btn {
+                margin-top: 1rem;
+                width: 100%;
+                height: 3rem;
+                grid-area: 2 / 1 / 3 / 4;
+                border: none;
+                border-radius: 0.5rem;
+                color: #{$white};
+                background-color: #{$orange};
+                font-size: larger;
+                box-shadow: #{$box-shadow};
+                cursor: pointer;
+                &:hover {
+                  opacity: 0.5;
+                }
+              }
+            }
+          }
+          // &.hidden {
+          //   display: none;
+          // }
+        }
+      }
+      .main-content {
+        .inpage-gallery {
+          img {
+            width: 200px;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+/* End the styles for the desktop screens */
