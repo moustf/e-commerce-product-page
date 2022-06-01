@@ -192,3 +192,7 @@ if (localStorage.getItem("isCartAdded") === "false") {
   cartEmptyText.style.display = "block";
   cartProducts.style.display = "none";
 }
+
+// ? Targeting the desktop cart icon and the cart box in the header section.
+const cartDesktop = document.querySelector(".desktop-cont .head .cart-icon");
+const cartBoxDesktop = document.querySelector(".desktop-cont .head .cart-box-desktop");
