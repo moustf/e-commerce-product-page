@@ -23,7 +23,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="mobile-cont" style="display: none;">
+      <div class="mobile-cont">
         <header class="header-mobile">
           <div class="head">
             <img
@@ -174,6 +174,7 @@
             <a href="#" class="sec">Contact</a>
           </div>
           <img src="./images/icon-cart.svg" alt="cart icon" class="cart-icon">
+          <img src="./images/image-avatar.png" alt="avatar image" class="user-image">
 
           <div class="cart-box-desktop hidden">
             <h1 class="cart-head">Cart</h1>
@@ -203,7 +204,7 @@
                 </div>
                 <button type="button" class="checkout-btn">Checkout</button>
               </div>
-          <img src="./images/image-avatar.png" alt="avatar" class="user-image">
+          <!-- <img src="./images/image-avatar.png" alt="avatar" class="user-image"> -->
         </header>
         <main class="main-content">
           <figure class="inpage-gallery">
@@ -267,110 +268,114 @@
               </div>
               <p class="prev-price">$250.00</p>
             </div>
-            <div class="quantity">
-              <img
-                src="./images/icon-minus.svg"
-                alt="minus image"
-                class="minus-image"
-              />
-              <p class="number">0</p>
-              <img
-                src="./images/icon-plus.svg"
-                alt="plus image"
-                class="plus-img"
-              />
+            <div class="qun-and-btn">
+              <div class="quantity">
+                <img
+                  src="./images/icon-minus.svg"
+                  alt="minus image"
+                  class="minus-image"
+                />
+                <p class="number">0</p>
+                <img
+                  src="./images/icon-plus.svg"
+                  alt="plus image"
+                  class="plus-img"
+                />
+              </div>
+              <button class="add-to-cart-btn">
+                <img
+                  src="./images/icon-cart-white.svg"
+                  alt="cart image"
+                  class="add-to-cart-img"
+                />
+                <span class="text">Add to cart</span>
+              </button>
             </div>
-            <button class="add-to-cart-btn">
-              <img
-                src="./images/icon-cart-white.svg"
-                alt="cart image"
-                class="add-to-cart-img"
-              />
-              <span class="text">Add to cart</span>
-            </button>
           </section>
         </main>
         
         <section class="outer-gallery">
-          <div class="close-icons">
-            <img 
-            src="./images/icon-close.svg" 
-            alt="close icon" 
-            class="close-icon"
-            >
-            <img
-            src="./images/icon-close-orange.svg"
-            alt="orange close image"
-            class="orange-close-icon"
-            >
-          </div>
-          <div class="large-images">
-            <img 
-            src="./images/image-product-1.jpg" 
-            alt="large image 1" 
-            class="large-image1 product-lrg-img"
-            >
-            <img 
-            src="./images/image-product-2.jpg" 
-            alt="large image 2" 
-            class="large-image2 product-lrg-img"
-            >
-            <img 
-            src="./images/image-product-3.jpg" 
-            alt="large image 3" 
-            class="large-image3 product-lrg-img"
-            >
-            <img 
-            src="./images/image-product-4.jpg" 
-            alt="large image 4" 
-            class="large-image4 product-lrg-img"
-            >
-            <div class="previous-arrows">
+          <div class="inner-cont">
+            <div class="close-icons">
               <img 
-              src="./images/icon-previous.svg" 
-              alt="previous image" 
-              class="previous-img"
+              src="./images/icon-close.svg" 
+              alt="close icon" 
+              class="close-icon"
               >
-              <img 
-              src="./images/icon-previous-orange.svg" 
-              alt="orange previous image" 
-              class="orange-previous-img"
+              <img
+              src="./images/icon-close-orange.svg"
+              alt="orange close image"
+              class="orange-close-icon"
               >
             </div>
-            <div class="next-arrows">
+            <div class="large-images">
               <img 
-              src="./images/icon-next.svg" 
-              alt="next image" 
-              class="next-img"
+              src="./images/image-product-1.jpg" 
+              alt="large image 1" 
+              class="large-image1 product-lrg-img"
               >
               <img 
-              src="./images/icon-next-orange.svg" 
-              alt="orange next image" 
-              class="orange-next-img"
+              src="./images/image-product-2.jpg" 
+              alt="large image 2" 
+              class="large-image2 product-lrg-img"
+              >
+              <img 
+              src="./images/image-product-3.jpg" 
+              alt="large image 3" 
+              class="large-image3 product-lrg-img"
+              >
+              <img 
+              src="./images/image-product-4.jpg" 
+              alt="large image 4" 
+              class="large-image4 product-lrg-img"
+              >
+              <div class="previous-arrows">
+                <img 
+                src="./images/icon-previous.svg" 
+                alt="previous image" 
+                class="previous-img"
+                >
+                <img 
+                src="./images/icon-previous-orange.svg" 
+                alt="orange previous image" 
+                class="orange-previous-img"
+                >
+              </div>
+              <div class="next-arrows">
+                <img 
+                src="./images/icon-next.svg" 
+                alt="next image" 
+                class="next-img"
+                >
+                <img 
+                src="./images/icon-next-orange.svg" 
+                alt="orange next image" 
+                class="orange-next-img"
+                >
+              </div>
+            </div>
+            <div class="small-images">
+              <img 
+              src="./images/image-product-1-thumbnail.jpg" 
+              alt="small image 1" 
+              class="small-image-1 product-sml-img"
+              >
+              <img 
+              src="./images/image-product-2-thumbnail.jpg" 
+              alt="small image 2" 
+              class="small-image-2 product-sml-img"
+              >
+              <img 
+              src="./images/image-product-3-thumbnail.jpg" 
+              alt="small image 3" 
+              class="small-image-3 product-sml-img"
+              >
+              <img 
+              src="./images/image-product-4-thumbnail.jpg" 
+              alt="small image 4" 
+              class="small-image-4 product-sml-img"
               >
             </div>
-          </div>
-          <div class="small-images">
-            <img 
-            src="./images/image-product-1-thumbnail.jpg" 
-            alt="small image 1" 
-            class="small-image-1 product-sml-img"
-            >
-            <img 
-            src="./images/image-product-2-thumbnail.jpg" 
-            alt="small image 2" 
-            class="small-image-2 product-sml-img"
-            >
-            <img 
-            src="./images/image-product-3-thumbnail.jpg" 
-            alt="small image 3" 
-            class="small-image-3 product-sml-img"
-            >
-            <img 
-            src="./images/image-product-4-thumbnail.jpg" 
-            alt="small image 4" 
-            class="small-image-4 product-sml-img"
-            >
           </div>
         </section>
       </div>
