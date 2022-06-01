@@ -26,7 +26,7 @@ body {
   height: 0.3rem;
   background-color: #{$orange};
   left: #{$left};
-  top: 64px;
+  top: 50px;
 }
 /* Start the mobile screens styles. */
 
@@ -349,6 +349,9 @@ body {
       }
     }
   }
+  .desktop-cont {
+    display: none;
+  }
 }
 /* End the mobile screens styles. */
 
@@ -365,6 +368,7 @@ body {
     .desktop-cont {
       width: 100%;
       height: 100%;
+      display: block;
       .head {
         width: 100%;
         height: 12vh;
@@ -375,8 +379,8 @@ body {
         border-bottom: 1px solid #{$grayish-blue};
         margin-bottom: 2rem;
         .logo {
-          width: 12rem;
-          height: 2rem;
+          width: 10rem;
+          height: 1.5rem;
           cursor: pointer;
         }
         .sections {
@@ -384,54 +388,55 @@ body {
           .sec {
             text-decoration: none;
             color: #{$dark-grayish-blue};
-            font-size: larger;
-            margin-right: 3rem;
+            font-size: medium;
+            margin-left: 3rem;
             position: relative;
           }
           .sec:first-of-type {
             &:hover {
               &::after {
-                @include sectionAfter(8rem, -15px);
+                @include sectionAfter(6.5rem, -10px);
               }
             }
           }
           .sec:nth-of-type(2) {
             &:hover {
               &::after {
-                @include sectionAfter(4rem, -10px);
+                @include sectionAfter(3rem, -7px);
               }
             }
           }
           .sec:nth-of-type(3) {
             &:hover {
               &::after {
-                @include sectionAfter(6rem, -12px);
+                @include sectionAfter(5rem, -8px);
               }
             }
           }
           .sec:nth-of-type(4) {
             &:hover {
               &::after {
-                @include sectionAfter(5rem, -12px);
+                @include sectionAfter(4rem, -8px);
               }
             }
           }
           .sec:last-of-type {
             &:hover {
               &::after {
-                @include sectionAfter(6rem, -10px);
+                @include sectionAfter(5rem, -7px);
               }
             }
           }
         }
         .cart-icon {
-          width: 32px;
-          height: 32px;
+          width: 24px;
+          height: 24px;
           cursor: pointer;
+          margin-right: 2rem;
         }
         .user-image {
-          width: 64px;
-          height: 64px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           cursor: pointer;
           &:hover {
@@ -441,9 +446,9 @@ body {
         .cart-box-desktop {
           position: absolute;
           right: 100px;
-          top: 112px;
-          width: 25rem;
-          height: 17rem;
+          top: 90px;
+          width: 20rem;
+          height: 14rem;
           background-color: white;
           border-radius: 0.5rem;
           box-shadow: 0px 1px 5px 0 rgb(160, 160, 160);
@@ -478,8 +483,8 @@ body {
               flex-wrap: wrap;
               display: none;
               .product-thumbnail {
-                width: 4rem;
-                height: 3.5rem;
+                width: 3rem;
+                height: 3rem;
                 border-radius: 0.5rem;
                 margin-bottom: 0.7rem;
               }
@@ -488,15 +493,16 @@ body {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding-left: 0.8rem;
+                padding-left: 0.2rem;
                 margin-bottom: 0.7rem;
                 .inner-text {
                   color: #{$dark-grayish-blue};
                   .details {
-                    font-size: medium;
+                    font-size: small;
+                    letter-spacing: 0.5px;
                   }
                   .price {
-                    font-size: medium;
+                    font-size: small;
                     span {
                       padding-left: 0.5rem;
                     }
@@ -507,8 +513,8 @@ body {
                   }
                 }
                 .delete-img {
-                  width: #{$icons-dim};
-                  height: #{$icons-dim};
+                  width: 1rem;
+                  height: 1rem;
                   cursor: pointer;
                   margin-bottom: 0.7rem;
                 }
@@ -516,13 +522,13 @@ body {
               .checkout-btn {
                 margin-top: 1rem;
                 width: 100%;
-                height: 3.5rem;
+                height: 2.5rem;
                 grid-area: 2 / 1 / 3 / 4;
                 border: none;
                 border-radius: 0.5rem;
                 color: #{$white};
                 background-color: #{$orange};
-                font-size: larger;
+                font-size: medium;
                 box-shadow: #{$box-shadow};
                 cursor: pointer;
                 &:hover {
@@ -550,7 +556,7 @@ body {
           justify-content: center;
           .large-images {
             width: 55%;
-            height: 70%;
+            height: 75%;
             position: relative;
             @for $num from 1 through 4 {
               .large-image#{$num} {
@@ -572,8 +578,8 @@ body {
             gap: 1.2rem;
             @for $num from 1 through 4 {
               .small-image-#{$num} {
-                width: 100px;
-                height: 100px;
+                width: 75px;
+                height: 65px;
                 border-radius: 0.5rem;
                 cursor: pointer;
                 &:hover {
@@ -596,19 +602,19 @@ body {
             opacity: 0.8;
             text-transform: uppercase;
             font-weight: 700;
-            font-size: large;
+            font-size: medium;
             letter-spacing: 2px;
           }
           .product-title {
-            max-width: 500px;
-            font-size: xxx-large;
+            max-width: 400px;
+            font-size: xx-large;
           }
           .product-text-para {
-            max-width: 500px;
+            max-width: 400px;
             height: fit-content;
-            font-size: large;
+            font-size: small;
             color: #{$dark-grayish-blue};
-            line-height: 2rem;
+            line-height: 1.5rem;
           }
           .price-and-discount {
             width: 100%;
@@ -618,24 +624,24 @@ body {
             flex-direction: column;
             gap: 1rem;
             .inner {
-              width: 30%;
+              width: 22%;
               display: flex;
               justify-content: space-between;
               align-items: center;
               .single-price {
                 font-weight: 700;
-                font-size: xxx-large;
+                font-size: x-large;
               }
               .discount {
-                width: 60px;
-                height: 40px;
+                width: 45px;
+                height: 30px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 background-color: #{$pale-orange};
                 color: #{$orange};
                 font-weight: 700;
-                font-size: larger;
+                font-size: medium;
                 border-radius: 0.3rem;
                 box-shadow: #{$box-shadow};
               }
@@ -644,17 +650,17 @@ body {
               color: #{$dark-grayish-blue};
               text-decoration: line-through;
               opacity: 0.6;
-              font-size: large;
+              font-size: medium;
             }
           }
           .qun-and-btn {
             width: 100%;
-            height: 15%;
+            height: 12%;
             display: flex;
             gap: 2rem;
             .quantity {
               width: 25%;
-              height: 6vh;
+              height: 5vh;
               background-color: #{$light-grayish-blue};
               display: flex;
               justify-content: space-between;
@@ -664,23 +670,24 @@ body {
               box-shadow: #{$box-shadow};
               margin-bottom: 1rem;
               .number {
-                font-size: x-large;
+                font-size: small;
+                font-weight: bold;
               }
               img {
-                width: 20px;
-                height: 16px;
+                width: 10px;
+                height: 10px;
                 cursor: pointer;
                 &:hover {
                   opacity: 0.7;
                 }
               }
               img.minus-image {
-                height: 6px;
+                height: 4px;
               }
             }
             .add-to-cart-btn {
               width: 35%;
-              height: 6vh;
+              height: 5vh;
               background-color: #{$orange};
               color: #{$white};
               border: none;
@@ -689,10 +696,11 @@ body {
               display: flex;
               justify-content: center;
               align-items: center;
-              font-size: large;
+              font-size: small;
               font-weight: 700;
               cursor: pointer;
               img {
+                width: 16px;
                 margin-right: 1rem;
                 filter: invert(93%) sepia(99%) saturate(0%) hue-rotate(126deg)
                   brightness(110%) contrast(100%);
@@ -717,22 +725,22 @@ body {
         align-items: center;
         display: none;
         .inner-cont {
-          width: 30%;
-          height: 80%;
+          width: 35%;
+          height: 90%;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           .close-icons {
-            width: 40px;
-            height: 30px;
+            width: 30px;
+            height: 20px;
             align-self: flex-end;
             position: relative;
             margin-bottom: 1.5rem;
             transition: display 0.5s ease-in-out;
             cursor: pointer;
             img {
-              width: 20px;
+              width: 17px;
               position: absolute;
             }
             .close-icon {
@@ -752,11 +760,11 @@ body {
           }
           .large-images {
             width: 100%;
-            height: 80%;
+            height: 90%;
             position: relative;
             .product-lrg-img {
               width: 100%;
-              height: 90%;
+              height: 95%;
               position: absolute;
               border-radius: 1rem;
               cursor: pointer;
@@ -769,23 +777,23 @@ body {
               }
             }
             .previous-arrows {
-              width: 50px;
-              height: 50px;
+              width: 40px;
+              height: 40px;
               display: flex;
               justify-content: center;
               align-items: center;
               position: absolute;
-              left: -20px;
-              top: 40%;
+              left: -16px;
+              top: 45%;
               z-index: 1001;
               background-color: white;
               border-radius: 50%;
               transition: display 0.5s ease-in-out;
               cursor: pointer;
               img {
-                width: 20px;
+                width: 12px;
                 position: absolute;
-                transform: translateX(-5px)
+                transform: translateX(-2px);
               }
               .previous-img {
                 display: block;
@@ -803,23 +811,23 @@ body {
               }
             }
             .next-arrows {
-              width: 50px;
-              height: 50px;
+              width: 40px;
+              height: 40px;
               display: flex;
               justify-content: center;
               align-items: center;
               position: absolute;
-              right: -20px;
-              top: 40%;
+              right: -16px;
+              top: 45%;
               z-index: 1001;
               background-color: white;
               border-radius: 50%;
               transition: display 0.5s ease-in-out;
               cursor: pointer;
               img {
-                width: 22px;
+                width: 13px;
                 position: absolute;
-                transform: translateX(4px)
+                transform: translateX(2px);
               }
               .next-img {
                 display: block;
@@ -838,23 +846,24 @@ body {
             }
           }
           .small-images {
+            width: 80%;
             display: flex;
             gap: 1.2rem;
-              .product-sml-img {
-                width: 100px;
-                height: 100px;
-                border-radius: 0.5rem;
-                cursor: pointer;
-                &:hover {
-                  opacity: 0.8;
-                  border: 3px solid #{$orange};
-                }
+            .product-sml-img {
+              width: 100px;
+              height: 80px;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              &:hover {
+                opacity: 0.8;
+                border: 3px solid #{$orange};
               }
+            }
+          }
         }
       }
     }
   }
-}
 }
 
 /* End the styles for the desktop screens */
