@@ -206,3 +206,31 @@ function showDesktopCart() {
 
 // ? Adding the event listener to the cart icon.
 cartDesktop.addEventListener("click", showDesktopCart);
+
+// ? Targeting the large images and their container.
+const largeImagesOneCont = document.querySelector(
+  ".inpage-gallery .large-images"
+);
+const largeImagesOne = document.querySelectorAll(
+  ".inpage-gallery .large-images img"
+);
+
+// ? Targeting the small images and their container.
+const smallImagesOneCont = document.querySelector(
+  ".inpage-gallery .small-images"
+);
+const smallImagesOne = document.querySelectorAll(
+  ".inpage-gallery .small-images img"
+);
+
+// ? Adding the event listener and the functionality for the showImageBigger functionality.
+
+smallImagesOne.forEach((image) => {
+  image.addEventListener("click", (e) => {
+    const bigger = largeImagesOneCont.querySelector(
+      `[data-img='${e.target.dataset.img}']`
+    );
+    largeImagesOne.forEach((img) => (img.style.zIndex = "0"));
+    bigger.style.zIndex = "1";
+  });
+});
