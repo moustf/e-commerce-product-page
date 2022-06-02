@@ -234,3 +234,14 @@ smallImagesOne.forEach((image) => {
     bigger.style.zIndex = "1";
   });
 });
+
+// ? Targeting the outer gallery.
+const outerGallery = document.getElementsByClassName("outer-gallery")[0];
+
+// ? Creating the function that will show the outer gallery.
+function showOuterGallery() {
+  outerGallery.classList.toggle("hidden");
+}
+
+// ? Adding the event listener to the large images div.
+largeImagesOneCont.addEventListener("click", showOuterGallery);
