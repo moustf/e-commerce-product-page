@@ -320,3 +320,32 @@ function previousImageOuter() {
 }
 // ? Adding event listener to the outerPreviousArrows.
 outerPreviousArrows.addEventListener("click", previousImageOuter);
+
+// ? Targeting the plus desktop icon, the minus desktop icon, and the inner number.
+const desktopPlusIcon = document.querySelector(
+  ".qun-and-btn .quantity .plus-img"
+);
+const desktopMinusIcon = document.querySelector(
+  ".qun-and-btn .quantity .minus-img"
+);
+const desktopQunNumber = document.querySelector(
+  ".qun-and-btn .quantity .number"
+);
+
+// ? Creating the increase quantity function.
+function increaseQuantityDesk() {
+  let numberOfItems = Number(desktopQunNumber.textContent);
+  desktopQunNumber.textContent = ++numberOfItems;
+}
+
+// ? Creating the decrease quantity function.
+function decreaseQuantityDesk() {
+  let numberOfItems = Number(desktopQunNumber.textContent);
+  if (numberOfItems > 0) desktopQunNumber.textContent = --numberOfItems;
+}
+
+// ? Adding the event listener to the plus desktop icon.
+desktopPlusIcon.addEventListener("click", increaseQuantityDesk);
+
+// ? Adding the event listener to the minus desktop icon.
+desktopMinusIcon.addEventListener("click", decreaseQuantityDesk);
