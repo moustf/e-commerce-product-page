@@ -419,3 +419,19 @@ function getPriceFromLSDesk() {
 
 // ? Calling the function.
 getPriceFromLSDesk();
+
+// ? Targeting the delete button in the desktop cart.
+const deleteDesktopBtn = document.querySelector(
+  ".cart-box-desktop .text-info .delete-img"
+);
+
+// ? Adding the function for removing the product details form the cart.
+function removeCartProductsDesktop() {
+  cartEmptyTextDesk.style.display = "block";
+  cartTextInfoDesk.style.display = "none";
+  isAddedToCartTwo = false;
+  addCartToLS("isCartAddedTwo", isAddedToCartTwo);
+}
+
+// ? Adding the event listener to the delete icon.
+deleteDesktopBtn.addEventListener("click", removeCartProductsDesktop);
