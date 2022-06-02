@@ -73,6 +73,33 @@ body {
   cursor: pointer;
 }
 
+.container .mobile-cont .header-mobile .head span.cart-quantity {
+  width: 20px;
+  height: 10px;
+  padding: 0.5rem;
+  background-color: #ff7d1a;
+  position: absolute;
+  right: 16%;
+  top: -5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: xx-small;
+  font-weight: bold;
+  border-radius: 2rem;
+}
+
+.container .mobile-cont .header-mobile .head span.cart-quantity.hidden {
+  display: none;
+}
+
 .container .mobile-cont .header-mobile .head .cart-img-mob {
   width: 1.2rem;
   height: 1.2rem;
