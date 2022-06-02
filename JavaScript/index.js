@@ -133,6 +133,47 @@ if (localStorage.getItem("isCartAdded") === "true") {
   addToCart();
 }
 
+
+// ? Targeting the cart quantity span.
+const cartQuantitySpan = document.querySelector(".mobile-cont .cart-quantity");
+
+// ? Creating the function which is for showing the cart quantity span.
+function showCartQuantitySpan() {
+  cartQuantitySpan.classList.toggle("hidden");
+}
+
+// ? Adding the function which will take the quantity and put it in the span.
+function addQuantityToSpan(quantity) {
+  cartQuantitySpan.textContent = quantity;
+  putCartQunToLS("isShownOne", "true");
+  addNumOfProdToLS("NumOfProdOne", quantity);
+}
+
+// ? Adding the event listener to the addToCart button.
+addToCartBtn.addEventListener("click", () => {
+  showCartQuantitySpan();
+  addQuantityToSpan(quantityNum.textContent);
+});
+
+// ? Creating the function which sets the item to local storage.
+function putCartQunToLS(item, value) {
+  window.localStorage.setItem(item, value);
+}
+
+// ? Add number of products to local storage.
+function addNumOfProdToLS(item, val) {
+  window.localStorage.setItem(item, val);
+}
+
+// ? Checking if isShown item is true, then calling the rendering function.
+if (localStorage.getItem("isShownOne") === "true") showCartQuantitySpan();
+
+// ? Putting the number of products from the local storage in the cart span.
+if (localStorage.getItem("NumOfProdOne")) {
+  let qun = localStorage.getItem("NumOfProdOne");
+  addQuantityToSpan(qun);
+}
+
 // ? Targeting the cart price elements.
 const singlePrice = document.querySelector(".inner-text .price .single");
 const numberOfProducts = document.querySelector(".inner-text .price .number");
