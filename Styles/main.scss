@@ -447,6 +447,25 @@ body {
             }
           }
         }
+        span.cart-quantity-desktop {
+          width: 20px;
+          height: 10px;
+          padding: 0.5rem;
+          background-color: #{$orange};
+          position: absolute;
+          right: 13.5%;
+          top: 5.2%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #{$white};
+          font-size: xx-small;
+          font-weight: bold;
+          border-radius: 2rem;
+          &.hidden {
+            display: none;
+          }
+        }
         .cart-icon {
           width: 24px;
           height: 24px;

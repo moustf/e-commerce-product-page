@@ -675,6 +675,31 @@ body {
     left: -7px;
     top: 50px;
   }
+  .container .desktop-cont .head span.cart-quantity-desktop {
+    width: 20px;
+    height: 10px;
+    padding: 0.5rem;
+    background-color: #ff7d1a;
+    position: absolute;
+    right: 13.5%;
+    top: 5.2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white;
+    font-size: xx-small;
+    font-weight: bold;
+    border-radius: 2rem;
+  }
+  .container .desktop-cont .head span.cart-quantity-desktop.hidden {
+    display: none;
+  }
   .container .desktop-cont .head .cart-icon {
     width: 24px;
     height: 24px;

@@ -133,7 +133,6 @@ if (localStorage.getItem("isCartAdded") === "true") {
   addToCart();
 }
 
-
 // ? Targeting the cart quantity span.
 const cartQuantitySpan = document.querySelector(".mobile-cont .cart-quantity");
 
@@ -247,6 +246,56 @@ function showDesktopCart() {
 
 // ? Adding the event listener to the cart icon.
 cartDesktop.addEventListener("click", showDesktopCart);
+
+// ? Targeting the cart quantity span and the quantity number and the add to cart button.
+const cartQuantitySpanDesk = document.querySelector(
+  ".desktop-cont .cart-quantity-desktop"
+);
+console.log(cartQuantitySpanDesk);
+const desktopQunNumberInit = document.querySelector(
+  ".qun-and-btn .quantity .number"
+);
+const AddToCartDeskBtnInit = document.querySelector(
+  ".qun-and-btn .add-to-cart-btn"
+);
+
+// ? Creating the function which is for showing the cart quantity span.
+function showCartQuantitySpanDesktop() {
+  cartQuantitySpanDesk.classList.remove("hidden");
+}
+
+// ? Adding the function which will take the quantity and put it in the span.
+function addQuantityToSpanDesktop(quantity) {
+  cartQuantitySpanDesk.textContent = quantity;
+  putCartQunToLSDesktop("isShownTwo", "true");
+  addNumOfProdToLSDesktop("NumOfProdTwo", quantity);
+}
+
+// ? Adding the event listener to the addToCart button.
+AddToCartDeskBtnInit.addEventListener("click", () => {
+  showCartQuantitySpanDesktop();
+  addQuantityToSpanDesktop(desktopQunNumberInit.textContent);
+});
+
+// ? Creating the function which sets the item to local storage.
+function putCartQunToLSDesktop(item, value) {
+  window.localStorage.setItem(item, value);
+}
+
+// ? Add number of products to local storage.
+function addNumOfProdToLSDesktop(item, val) {
+  window.localStorage.setItem(item, val);
+}
+
+// ? Checking if isShown item is true, then calling the rendering function.
+if (localStorage.getItem("isShownTwo") === "true")
+  showCartQuantitySpanDesktop();
+
+// ? Putting the number of products from the local storage in the cart span.
+if (localStorage.getItem("NumOfProdTwo")) {
+  let qun = localStorage.getItem("NumOfProdTwo");
+  addQuantityToSpanDesktop(qun);
+}
 
 // ? Targeting the large images and their container.
 const largeImagesOneCont = document.querySelector(
