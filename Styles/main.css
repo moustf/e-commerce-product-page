@@ -1061,7 +1061,7 @@ body {
   .container .desktop-cont .main-content .product-info-desktop .qun-and-btn .quantity img:hover {
     opacity: 0.7;
   }
-  .container .desktop-cont .main-content .product-info-desktop .qun-and-btn .quantity img.minus-image {
+  .container .desktop-cont .main-content .product-info-desktop .qun-and-btn .quantity img.minus-img {
     height: 4px;
   }
   .container .desktop-cont .main-content .product-info-desktop .qun-and-btn .add-to-cart-btn {
