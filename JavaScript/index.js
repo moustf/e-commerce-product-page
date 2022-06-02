@@ -273,6 +273,16 @@ const smallImagesTwo = document.querySelectorAll(
   ".outer-gallery .small-images img"
 );
 
+// ? adding the event listener to the small images of the outer gallery.
+smallImagesTwo.forEach((image) => {
+  image.addEventListener("click", (e) => {
+    const bigger = largeImagesTwoCont.querySelector(
+      `[data-img='${e.target.dataset.img}']`
+    );
+    largeImagesTwo.forEach((img) => (img.style.zIndex = "0"));
+    bigger.style.zIndex = "1";
+  });
+});
 
 // ? Targeting the previous and next arrows in the outer gallery.
 const outerPreviousArrows = document.querySelector(
