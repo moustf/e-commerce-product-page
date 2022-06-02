@@ -393,3 +393,17 @@ function getTotalPriceDesk() {
   let quantity = +desktopQunNumber.textContent;
   return `$${(quantity * 125).toFixed(2)}`;
 }
+
+// ? Creating the function which is responsible for updating the price info in the desktop cart box.
+function updateCartPriceInfoDesk() {
+  numberOfProductsD.textContent = desktopQunNumber.textContent;
+  totalPriceD.textContent = getTotalPriceDesk();
+  const priceObjTwo = {
+    num: +desktopQunNumber.textContent,
+    total: +desktopQunNumber.textContent * 125,
+  };
+  addPriceToLS("priceTwo", priceObjTwo);
+}
+
+// ? Adding the event listener to the add to cart button in the desktop design.
+AddToCartDeskBtn.addEventListener("click", updateCartPriceInfoDesk);
