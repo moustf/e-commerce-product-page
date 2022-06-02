@@ -256,3 +256,57 @@ function closeOuterGallery() {
 
 // ? Adding the event listener to the close icon.
 outerCloseIcon.addEventListener("click", closeOuterGallery);
+
+// ? Targeting the large images and their container in the outer gallery.
+const largeImagesTwoCont = document.querySelector(
+  ".outer-gallery .large-images"
+);
+const largeImagesTwo = document.querySelectorAll(
+  ".outer-gallery .large-images img"
+);
+
+// ? Targeting the small images and their container in the outer gallery.
+const smallImagesTwoCont = document.querySelector(
+  ".outer-gallery .small-images"
+);
+const smallImagesTwo = document.querySelectorAll(
+  ".outer-gallery .small-images img"
+);
+
+
+// ? Targeting the previous and next arrows in the outer gallery.
+const outerPreviousArrows = document.querySelector(
+  ".outer-gallery .previous-arrows"
+);
+const outerNextArrows = document.querySelector(".outer-gallery .next-arrows");
+
+// ? Creating the second index for the outer gallery.
+let indexTwo = 0;
+
+// ? Creating the next image function for the outer gallery.
+function nextImageOuter() {
+  if (indexTwo < 4) {
+    console.log(indexTwo);
+    largeImagesTwo.forEach((img) => (img.style.zIndex = "0"));
+    largeImagesTwo[indexTwo].style.zIndex = "5";
+    indexTwo++;
+  }
+}
+
+// ? Adding event listener to the outerNextArrows.
+outerNextArrows.addEventListener("click", nextImageOuter);
+
+// ? Creating the previous image function for the outer gallery.
+function previousImageOuter() {
+  if (indexTwo === 4) {
+    largeImagesTwo.forEach((img) => (img.style.zIndex = "0"));
+    largeImagesTwo[indexTwo - 2].style.zIndex = "5";
+    indexTwo -= 2;
+  } else if (indexTwo > 0 && indexTwo < 4) {
+    indexTwo--;
+    largeImagesTwo.forEach((img) => (img.style.zIndex = "0"));
+    largeImagesTwo[indexTwo].style.zIndex = "5";
+  }
+}
+// ? Adding event listener to the outerPreviousArrows.
+outerPreviousArrows.addEventListener("click", previousImageOuter);
