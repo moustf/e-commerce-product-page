@@ -117,15 +117,15 @@ function addToCart() {
   cartEmptyText.style.display = "none";
   cartProducts.style.display = "flex";
   isAddedToCart = true;
-  addCartToLS(isAddedToCart);
+  addCartToLS("isCartAdded", isAddedToCart);
 }
 
 // ? Added the event listener to the addToCartBtn element.
 addToCartBtn.addEventListener("click", addToCart);
 
 // ? Creating the function which is responsible for adding the isAddedToCart var to local storage.
-function addCartToLS(isAdded) {
-  localStorage.setItem("isCartAdded", isAdded);
+function addCartToLS(item, isAdded) {
+  localStorage.setItem(item, isAdded);
 }
 
 // ? Testing if local storage has items, then render them onto the page.
@@ -152,15 +152,15 @@ function updateCartPriceInfo() {
     num: +quantityNum.textContent,
     total: +quantityNum.textContent * 125,
   };
-  addPriceToLS(priceObj);
+  addPriceToLS("price", priceObj);
 }
 
 // ? Adding the event listener to the addToCart button to apply the updateCartPriceInfo function.
 addToCartBtn.addEventListener("click", updateCartPriceInfo);
 
 // ? Creating the function which is responsible for adding the price to local storage.
-function addPriceToLS(obj) {
-  localStorage.setItem("price", JSON.stringify(obj));
+function addPriceToLS(item, obj) {
+  localStorage.setItem(item, JSON.stringify(obj));
 }
 
 // ? Get price data form local storage.
@@ -181,7 +181,7 @@ function removeCartProducts() {
   cartEmptyText.style.display = "block";
   cartProducts.style.display = "none";
   isAddedToCart = false;
-  addCartToLS(isAddedToCart);
+  addCartToLS("isCartAdded", isAddedToCart);
 }
 
 // ? Adding the event listener to the delete image.
