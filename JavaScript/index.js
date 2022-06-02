@@ -407,3 +407,15 @@ function updateCartPriceInfoDesk() {
 
 // ? Adding the event listener to the add to cart button in the desktop design.
 AddToCartDeskBtn.addEventListener("click", updateCartPriceInfoDesk);
+
+// ? Get priceTwo data form local storage.
+function getPriceFromLSDesk() {
+  if (localStorage.getItem("priceTwo")) {
+    let data = JSON.parse(localStorage.getItem("priceTwo"));
+    numberOfProductsD.textContent = data.num;
+    totalPriceD.textContent = `$${(data.num * 125).toFixed(2)}`;
+  }
+}
+
+// ? Calling the function.
+getPriceFromLSDesk();
