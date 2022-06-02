@@ -723,7 +723,6 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        display: none;
         .inner-cont {
           width: 35%;
           height: 90%;
@@ -860,6 +859,9 @@ body {
               }
             }
           }
+        }
+        &.hidden {
+          display: none;
         }
       }
     }
