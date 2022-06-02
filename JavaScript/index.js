@@ -349,3 +349,33 @@ desktopPlusIcon.addEventListener("click", increaseQuantityDesk);
 
 // ? Adding the event listener to the minus desktop icon.
 desktopMinusIcon.addEventListener("click", decreaseQuantityDesk);
+
+// ? Targeting the add to cart desktop button.
+const AddToCartDeskBtn = document.querySelector(
+  ".qun-and-btn .add-to-cart-btn"
+);
+const cartTextInfoDesk = document.querySelector(
+  ".cart-box-desktop .cart-products"
+);
+const cartEmptyTextDesk = document.querySelector(
+  ".cart-box-desktop .cart-box-info .cart-empty-text"
+);
+
+// ? Added the boolean value to save on local storage.
+let isAddedToCartTwo = false;
+
+// ? Added the function that is responsible for adding to cart.
+function addToCartDesktop() {
+  cartEmptyTextDesk.style.display = "none";
+  cartTextInfoDesk.style.display = "flex";
+  isAddedToCartTwo = true;
+  addCartToLS("isCartAddedTwo", isAddedToCartTwo);
+}
+
+// ? Adding the event listener to the add to cart button.
+AddToCartDeskBtn.addEventListener("click", addToCartDesktop);
+
+// ? Checking if the local storage have an isCartAddedTwo item to display the cart.
+if (localStorage.getItem(`isCartAddedTwo`) === "true") {
+  addToCartDesktop();
+}
