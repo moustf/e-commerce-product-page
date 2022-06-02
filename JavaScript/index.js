@@ -379,3 +379,43 @@ AddToCartDeskBtn.addEventListener("click", addToCartDesktop);
 if (localStorage.getItem(`isCartAddedTwo`) === "true") {
   addToCartDesktop();
 }
+
+// ? Targeting the quantity number and the total price.
+const numberOfProductsD = document.querySelector(
+  ".cart-box-desktop .cart-products .text-info .number"
+);
+const totalPriceD = document.querySelector(
+  ".cart-box-desktop .cart-products .text-info .total"
+);
+
+// ? creating the function which is responsible for calculating the total price in the desktop cart.
+function getTotalPriceDesk() {
+  let quantity = +desktopQunNumber.textContent;
+  return `$${(quantity * 125).toFixed(2)}`;
+}
+
+// ? Creating the function which is responsible for updating the price info in the desktop cart box.
+function updateCartPriceInfoDesk() {
+  numberOfProductsD.textContent = desktopQunNumber.textContent;
+  totalPriceD.textContent = getTotalPriceDesk();
+  const priceObjTwo = {
+    num: +desktopQunNumber.textContent,
+    total: +desktopQunNumber.textContent * 125,
+  };
+  addPriceToLS("priceTwo", priceObjTwo);
+}
+
+// ? Adding the event listener to the add to cart button in the desktop design.
+AddToCartDeskBtn.addEventListener("click", updateCartPriceInfoDesk);
+
+// ? Get priceTwo data form local storage.
+function getPriceFromLSDesk() {
+  if (localStorage.getItem("priceTwo")) {
+    let data = JSON.parse(localStorage.getItem("priceTwo"));
+    numberOfProductsD.textContent = data.num;
+    totalPriceD.textContent = `$${(data.num * 125).toFixed(2)}`;
+  }
+}
+
+// ? Calling the function.
+getPriceFromLSDesk();
