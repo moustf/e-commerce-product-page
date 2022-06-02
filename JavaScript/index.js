@@ -139,7 +139,7 @@ const cartQuantitySpan = document.querySelector(".mobile-cont .cart-quantity");
 
 // ? Creating the function which is for showing the cart quantity span.
 function showCartQuantitySpan() {
-  cartQuantitySpan.classList.toggle("hidden");
+  cartQuantitySpan.classList.remove("hidden");
 }
 
 // ? Adding the function which will take the quantity and put it in the span.
