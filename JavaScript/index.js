@@ -256,3 +256,29 @@ function closeOuterGallery() {
 
 // ? Adding the event listener to the close icon.
 outerCloseIcon.addEventListener("click", closeOuterGallery);
+
+// ? Targeting the large images and their container in the outer gallery.
+const largeImagesTwoCont = document.querySelector(
+  ".outer-gallery .large-images"
+);
+const largeImagesTwo = document.querySelectorAll(
+  ".outer-gallery .large-images img"
+);
+
+// ? Targeting the small images and their container in the outer gallery.
+const smallImagesTwoCont = document.querySelector(
+  ".outer-gallery .small-images"
+);
+const smallImagesTwo = document.querySelectorAll(
+  ".outer-gallery .small-images img"
+);
+
+
+// ? Targeting the previous and next arrows in the outer gallery.
+const outerPreviousArrows = document.querySelector(
+  ".outer-gallery .previous-arrows"
+);
+const outerNextArrows = document.querySelector(".outer-gallery .next-arrows");
+
+// ? Creating the second index for the outer gallery.
+let indexTwo = 0;
