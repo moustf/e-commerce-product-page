@@ -63,6 +63,25 @@ body {
           margin-left: -4rem;
           cursor: pointer;
         }
+        span.cart-quantity {
+          width: 20px;
+          height: 10px;
+          padding: 0.5rem;
+          background-color: #{$orange};
+          position: absolute;
+          right: 16%;
+          top: -5%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #{$white};
+          font-size: xx-small;
+          font-weight: bold;
+          border-radius: 2rem;
+          &.hidden {
+            display: none;
+          }
+        }
         .cart-img-mob {
           width: #{$icons-dim};
           height: #{$icons-dim};
