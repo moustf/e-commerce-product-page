@@ -245,3 +245,14 @@ function showOuterGallery() {
 
 // ? Adding the event listener to the large images div.
 largeImagesOneCont.addEventListener("click", showOuterGallery);
+
+// ? Targeting the close icon in the outer gallery.
+const outerCloseIcon = document.querySelector(".close-icons");
+
+// ? ADding the function which will close the outer gallery.
+function closeOuterGallery() {
+  outerGallery.classList.add("hidden");
+}
+
+// ? Adding the event listener to the close icon.
+outerCloseIcon.addEventListener("click", closeOuterGallery);
