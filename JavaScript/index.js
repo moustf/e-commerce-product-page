@@ -228,6 +228,8 @@ function removeCartProducts() {
 function removeCartNumberMob() {
   cartQuantitySpan.classList.add("hidden");
   cartQuantitySpan.textContent = "0";
+  localStorage.setItem("isShownOne", "false");
+  localStorage.removeItem("NumOfProdOne");
 }
 
 // ? Adding the event listener to the delete image.
