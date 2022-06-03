@@ -533,5 +533,16 @@ function removeCartProductsDesktop() {
   addCartToLS("isCartAddedTwo", isAddedToCartTwo);
 }
 
+// ? Creating the function for hiding the cart number on desktop design.
+function hideDesktopCartNum() {
+  cartQuantitySpanDesk.classList.add("hidden");
+  cartQuantitySpanDesk.textContent = "0";
+  localStorage.setItem("isShownTwo", "false");
+  localStorage.removeItem("NumOfProdTwo");
+}
+
 // ? Adding the event listener to the delete icon.
 deleteDesktopBtn.addEventListener("click", removeCartProductsDesktop);
+
+// ? Adding the event listener to the delete image to hide cart number.
+deleteDesktopBtn.addEventListener("click", hideDesktopCartNum);
