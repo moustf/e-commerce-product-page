@@ -224,8 +224,18 @@ function removeCartProducts() {
   addCartToLS("isCartAdded", isAddedToCart);
 }
 
+// ? Creating the function for hiding the quantity span.
+function removeCartNumberMob() {
+  cartQuantitySpan.classList.add("hidden");
+  cartQuantitySpan.textContent = "0";
+}
+
 // ? Adding the event listener to the delete image.
 deleteImg.addEventListener("click", removeCartProducts);
+
+// ? Adding the event listener to the delete image to hide cart number..
+deleteImg.addEventListener("click", removeCartNumberMob);
+
 
 // ? If the isCartAdded item in local storage is false, hide the product info from ls
 if (localStorage.getItem("isCartAdded") === "false") {
