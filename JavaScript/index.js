@@ -224,8 +224,20 @@ function removeCartProducts() {
   addCartToLS("isCartAdded", isAddedToCart);
 }
 
+// ? Creating the function for hiding the quantity span.
+function removeCartNumberMob() {
+  cartQuantitySpan.classList.add("hidden");
+  cartQuantitySpan.textContent = "0";
+  localStorage.setItem("isShownOne", "false");
+  localStorage.removeItem("NumOfProdOne");
+}
+
 // ? Adding the event listener to the delete image.
 deleteImg.addEventListener("click", removeCartProducts);
+
+// ? Adding the event listener to the delete image to hide cart number..
+deleteImg.addEventListener("click", removeCartNumberMob);
+
 
 // ? If the isCartAdded item in local storage is false, hide the product info from ls
 if (localStorage.getItem("isCartAdded") === "false") {
@@ -523,5 +535,16 @@ function removeCartProductsDesktop() {
   addCartToLS("isCartAddedTwo", isAddedToCartTwo);
 }
 
+// ? Creating the function for hiding the cart number on desktop design.
+function hideDesktopCartNum() {
+  cartQuantitySpanDesk.classList.add("hidden");
+  cartQuantitySpanDesk.textContent = "0";
+  localStorage.setItem("isShownTwo", "false");
+  localStorage.removeItem("NumOfProdTwo");
+}
+
 // ? Adding the event listener to the delete icon.
 deleteDesktopBtn.addEventListener("click", removeCartProductsDesktop);
+
+// ? Adding the event listener to the delete image to hide cart number.
+deleteDesktopBtn.addEventListener("click", hideDesktopCartNum);
